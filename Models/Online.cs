@@ -6,11 +6,11 @@ namespace teachBackend.Models
     {
         public long Id { get; set; }
 
-        public long TeachRecordId { get; set; }
+        public string TeachRecordId { get; set; }
         public string Class { get; set; }
-        public long PersonalId { get; set; }
+        public string PersonId { get; set; }
         public string Name { get; set; }
         public string Kind { get; set; }
-        public long SignalRId { get; set; }
+        public string SignalRId { get; set; }
     }
 }

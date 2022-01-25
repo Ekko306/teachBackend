@@ -34,7 +34,6 @@
 /Users/suyapeng/Desktop/毕业设计/teachBackend/teachBackend/obj/Debug/netcoreapp3.1/teachBackend.dll
 /Users/suyapeng/Desktop/毕业设计/teachBackend/teachBackend/obj/Debug/netcoreapp3.1/teachBackend.pdb
 /Users/suyapeng/Desktop/毕业设计/teachBackend/teachBackend/obj/Debug/netcoreapp3.1/teachBackend.genruntimeconfig.cache
-/Users/suyapeng/Desktop/毕业设计/teachBackend/teachBackend/bin/Debug/netcoreapp3.1/teachBackend
 /Users/suyapeng/Desktop/毕业设计/teachBackend/teachBackend/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Razor.Language.dll
 /Users/suyapeng/Desktop/毕业设计/teachBackend/teachBackend/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/suyapeng/Desktop/毕业设计/teachBackend/teachBackend/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll

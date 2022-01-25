@@ -30,8 +30,8 @@ namespace teachBackend.Models
 
         [BsonElement("teacherId")]
         [BsonRepresentation(BsonType.ObjectId)]
-
         public string TeacherId { get; set; }
+
         [BsonElement("signalRId")]
         public string SignalRId { get; set; }
         [BsonElement("class")]
