@@ -55,7 +55,8 @@ namespace teachBackend.Controllers
 
             _teacherService.Update(teacherId, teacherIn);
 
-            return NoContent();
+
+            return CreatedAtRoute(nameof(GetTeacher), new { teacherId = teacher.Id.ToString() }, teacherIn);
         }
 
         [HttpDelete("{teacherId:length(24)}")]
