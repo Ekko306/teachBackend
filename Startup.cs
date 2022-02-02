@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using teachBackend.Models;
 using teachBackend.Services;
 using Microsoft.EntityFrameworkCore;
+using teachBackend.Hubs;
 
 namespace teachBackend
 {
@@ -42,6 +43,8 @@ namespace teachBackend
                 opt.UseInMemoryDatabase("Online"));
 
             services.AddControllers();
+
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +55,9 @@ namespace teachBackend
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -59,6 +65,7 @@ namespace teachBackend
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<TeachHub>("/teachHub");
             });
         }
     }

@@ -16,8 +16,7 @@ namespace teachBackend.Models
         public string Title { get; set; }
 
         [BsonElement("time")]
-        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
-        public DateTime Time { get; set; }
+        public string Time { get; set; }
 
         [BsonElement("introduction")]
         public string Introduction { get; set; }

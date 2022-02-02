@@ -124,7 +124,7 @@ namespace teachBackend.Controllers
 
             _studentService.Update(studentId, studentIn);
 
-            return NoContent();
+            return CreatedAtRoute(nameof(GetStudent), new { studentId = student.Id.ToString() }, studentIn);
         }
 
         [HttpDelete("{studentId:length(24)}")]
@@ -182,6 +182,26 @@ namespace teachBackend.Controllers
 
             return teacher;
         }
+
+
+        [HttpGet("login/{email}/{password}")]
+        public ActionResult<LoginQuery> CheckLogin(string email, string password)
+        {
+            var teacherResult = _teacherService.CheckTeacher(email, password);
+            var studentResult = _studentService.CheckStudent(email, password);
+            if (teacherResult.Id != "-1")
+            {
+                return teacherResult;
+            }
+            else if(studentResult.Id != "-1")
+            {
+                return studentResult;
+            }
+            else
+            {
+                return new LoginQuery("-1", "error"); // 没查询到 账号或密码错误
+            }
+        }
     }
 
 
@@ -207,6 +227,22 @@ namespace teachBackend.Controllers
             }
 
             return record;
+        }
+
+
+        [HttpDelete("{recordId:length(24)}")]
+        public IActionResult Delete(string recordId)
+        {
+            var record = _recordService.Get(recordId);
+
+            if (record == null)
+            {
+                return NotFound();
+            }
+
+            _recordService.Remove(record.Id);
+
+            return NoContent();
         }
 
         [HttpPost]

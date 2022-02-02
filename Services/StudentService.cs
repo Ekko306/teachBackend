@@ -47,5 +47,22 @@ namespace teachBackend.Services
 
         public void Remove(string id) =>
             _students.DeleteOne(student => student.Id == id);
+
+
+
+        public LoginQuery CheckStudent(string email, string password)
+        {
+            var builder = Builders<Student>.Filter;
+            var filter = builder.And(builder.Eq("Email", email), builder.Eq("Password", password));
+            var result = _students.Find(filter).FirstOrDefault();
+            if(result == null )
+            {
+                return new LoginQuery("-1", "error");
+            }
+            else
+            {
+                return new LoginQuery(result.Id, "student");
+            }
+        }
     }
 }

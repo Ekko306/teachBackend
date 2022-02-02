@@ -20,7 +20,7 @@ namespace teachBackend
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("http://localhost:5000", "http://172.20.10.8:5000").UseStartup<Startup>();
                 });
     }
 }

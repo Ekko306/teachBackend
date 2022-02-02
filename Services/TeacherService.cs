@@ -52,9 +52,21 @@ namespace teachBackend.Services
             _teachers.DeleteOne(teacher => teacher.Id == id);
 
 
-
-        // student
-
-
+        public LoginQuery CheckTeacher(string email, string password)
+        {
+            var builder = Builders<Teacher>.Filter;
+            var filter = builder.And(builder.Eq("Email", email), builder.Eq("Password", password));
+            var result = _teachers.Find(filter).FirstOrDefault(); ;
+            if (result == null)
+            {
+                return new LoginQuery("-1", "error");
+            }
+            else
+            {
+                return new LoginQuery(result.Id, "teacher");
+            }
         }
+
+     
+    }
 }

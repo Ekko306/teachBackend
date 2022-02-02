@@ -8791,7 +8791,7 @@
       "outputPath": "/Users/suyapeng/Desktop/毕业设计/teachBackend/teachBackend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/suyapeng/.config/NuGet/NuGet.Config"
+        "/Users/suyapeng/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

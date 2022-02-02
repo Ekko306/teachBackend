@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2da98a84.css",
+    "main.js": "/static/js/main.14f828e7.js",
+    "static/js/845.c6269f99.chunk.js": "/static/js/845.c6269f99.chunk.js",
+    "static/js/787.edd59a96.chunk.js": "/static/js/787.edd59a96.chunk.js",
+    "static/media/mixkit-software-interface-start-2574.wav": "/static/media/mixkit-software-interface-start-2574.5b9ecb195741da638d9c.wav",
+    "static/media/mixkit-software-interface-back-2575.wav": "/static/media/mixkit-software-interface-back-2575.d5d8ec2285a606e44f86.wav",
+    "static/media/logo.png": "/static/media/logo.f3e291ea7f0597d6e2f8.png",
+    "static/media/xuxieban.png": "/static/media/xuxieban.3a2c850b904284eb3610.png",
+    "static/media/backImage.jpg": "/static/media/backImage.897bc99ef1332adf4bd3.jpg",
+    "static/media/daitu.jpeg": "/static/media/daitu.f43541797fe160fd0c4f.jpeg",
+    "static/media/index.less": "/static/media/index.512735b3dccd7d4b3088.less",
+    "index.html": "/index.html",
+    "static/media/default.less": "/static/media/default.003f90b383291c3b90da.less",
+    "main.2da98a84.css.map": "/static/css/main.2da98a84.css.map",
+    "main.14f828e7.js.map": "/static/js/main.14f828e7.js.map",
+    "845.c6269f99.chunk.js.map": "/static/js/845.c6269f99.chunk.js.map",
+    "787.edd59a96.chunk.js.map": "/static/js/787.edd59a96.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2da98a84.css",
+    "static/js/main.14f828e7.js"
+  ]
+}

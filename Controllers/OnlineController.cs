@@ -100,7 +100,8 @@ namespace teachBackend.Controllers
             var online = _context.Onlines.FirstOrDefault(person => person.PersonId == personId);
             if (online == null)
             {
-                return NotFound();
+                return NotFound(); // 如果没找到 也是代表删除了 没有危害
+                // return NoContent();
             }
 
             _context.Onlines.Remove(online);

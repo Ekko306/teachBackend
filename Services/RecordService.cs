@@ -34,6 +34,9 @@ namespace teachBackend.Services
             _records.ReplaceOne(record => record.Id == id, recordIn);
         }
 
+        public void Remove(string id) =>
+            _records.DeleteOne(student => student.Id == id);
+
         public List<Record> GetByTeacher(string teacherId)
         {
             var filter = Builders<Record>.Filter.Eq("TeacherId", teacherId);
