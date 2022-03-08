@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace teachBackend.Hubs
 {
@@ -46,6 +48,57 @@ namespace teachBackend.Hubs
         public async Task SendStatusInGroup(string groupName, string status) {   
             // permission是字符串 allow 或者 unallow
             await Clients.Group(groupName).ReceiveStatus(groupName, status);
+        }
+
+        public static List<string> imageStrings = new List<string>();
+
+        public struct ToJsonMy
+        {
+            public string groupName { get; set; }  //属性的名字，必须与json格式字符串中的"key"值一样。
+            public string user { get; set; }
+            public string time { get; set; }   
+        }
+
+        // 下面定义客户端向服务端流传输 服务端全部接收后向所有客户端发送 和上面SendImageInGroup成对比
+        public async Task UploadImageStream(IAsyncEnumerable<string> stream)
+        {
+            await foreach (var item in stream)
+            {
+                imageStrings.Add(item.ToString());
+                char[] MyChar = { '#', ',' };
+
+                // 不光要直接中转客户端数据 还需要拆分出来 groupName 只传递到group里
+                if (item.ToString().Contains("#"))
+                {
+                    string finalString = string.Join("", imageStrings.ToArray()).TrimEnd(MyChar);
+                    string[] splitStrings = finalString.Split("$");
+                    ToJsonMy temp = JsonConvert.DeserializeObject<ToJsonMy>(splitStrings[1]);
+
+                    await Clients.Group(temp.groupName).ReceiveImageStream(finalString);
+                    imageStrings = new List<string>();
+                }
+            }
+        }
+
+        //  因为同步的图片变大了，保存历史图片也要变大 照葫芦画瓢  和上面SendSavedImageInGroup成对比
+        public async Task UploadSavedImageStream(IAsyncEnumerable<string> stream)
+        {
+            await foreach (var item in stream)
+            {
+                imageStrings.Add(item.ToString());
+                char[] MyChar = { '#', ',' };
+
+                // 不光要直接中转客户端数据 还需要拆分出来 groupName 只传递到group里
+                if (item.ToString().Contains("#"))
+                {
+                    string finalString = string.Join("", imageStrings.ToArray()).TrimEnd(MyChar);
+                    string[] splitStrings = finalString.Split("$");
+                    ToJsonMy temp = JsonConvert.DeserializeObject<ToJsonMy>(splitStrings[1]);
+
+                    await Clients.Group(temp.groupName).ReceiveSavedImageStream(finalString);
+                    imageStrings = new List<string>();
+                }
+            }
         }
     }
 }
