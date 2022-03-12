@@ -43,5 +43,12 @@ namespace teachBackend.Services
             var result = _records.Find(filter).ToList();
             return result;
         }
+
+        public List<Record> GetByStudentClass(string classNum)
+        {
+            var filter = Builders<Record>.Filter.Eq("class", classNum);
+            var result = _records.Find(filter).ToList();
+            return result;
+        }
     }
 }

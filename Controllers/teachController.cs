@@ -281,5 +281,18 @@ namespace teachBackend.Controllers
 
             return records;
         }
+
+        [HttpGet("student/{classNum}")]
+        public ActionResult<List<Record>> GetRecordByStudentClass(string classNum)
+        {
+            var records = _recordService.GetByStudentClass(classNum);
+
+            if (records == null)
+            {
+                return NotFound();
+            }
+
+            return records;
+        }
     }
 }
