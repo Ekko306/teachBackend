@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2da98a84.css",
-    "main.js": "/static/js/main.31c3e6e3.js",
+    "main.js": "/static/js/main.437b56b7.js",
     "static/js/845.c6269f99.chunk.js": "/static/js/845.c6269f99.chunk.js",
     "static/js/787.edd59a96.chunk.js": "/static/js/787.edd59a96.chunk.js",
     "static/media/mixkit-software-interface-start-2574.wav": "/static/media/mixkit-software-interface-start-2574.5b9ecb195741da638d9c.wav",
@@ -14,12 +14,12 @@
     "index.html": "/index.html",
     "static/media/default.less": "/static/media/default.003f90b383291c3b90da.less",
     "main.2da98a84.css.map": "/static/css/main.2da98a84.css.map",
-    "main.31c3e6e3.js.map": "/static/js/main.31c3e6e3.js.map",
+    "main.437b56b7.js.map": "/static/js/main.437b56b7.js.map",
     "845.c6269f99.chunk.js.map": "/static/js/845.c6269f99.chunk.js.map",
     "787.edd59a96.chunk.js.map": "/static/js/787.edd59a96.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2da98a84.css",
-    "static/js/main.31c3e6e3.js"
+    "static/js/main.437b56b7.js"
   ]
 }
